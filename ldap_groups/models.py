@@ -6,7 +6,6 @@ from django.dispatch import receiver
 from django.contrib.auth.models import Group
 from django_auth_ldap.backend import LDAPBackend
 from django_auth_ldap.backend import populate_user
-logger = logging.getLogger(__name__)
 
 # Note: These config options are required, at a minimum
 server_uri = settings.AUTH_LDAP_SERVER_URI
