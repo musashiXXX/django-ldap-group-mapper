@@ -1,0 +1,3 @@
+include README LICENSE
+recursive-include ldap_groups *.py
+prune .git

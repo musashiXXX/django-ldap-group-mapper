@@ -1,0 +1,17 @@
+from setuptools import find_packages, setup
+
+setup(name = 'django-ldap-groups',
+      version = '0.1.0',
+      author = 'Charles Hamilton',
+      author_email = 'musashi@nefaria.com',
+      packages = find_packages(),
+      url = 'http://nefaria.com',
+      license = 'LICENSE.txt',
+      description = 'Django LDAP Group Mapper',
+      long_description = open('README.md').read(),
+      zip_safe = False,
+      install_requires = [
+        'django-auth-ldap >= 1.1.7',
+        'Django >= 1.0',
+        'python-ldap >= 2.0'
+      ])
