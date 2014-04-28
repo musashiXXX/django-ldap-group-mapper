@@ -45,13 +45,15 @@ class LDAPGroupMap(models.Model):
 
 @receiver(populate_user, sender = LDAPBackend)
 def set_group_perms(sender, **kwargs):
+    '''
+        Make sure that the user's group membership is always up to date
+    '''
     user = kwargs['user']
     ldap_user = kwargs['ldap_user']
-    group_list = []
+    user.groups.clear()
     for group_map in LDAPGroupMap.objects.all():
-        for django_group in group_map.django_group.values_list(
-            'id', flat = True):
-            if group_map.ldap_group.lower() in ldap_user.group_dns:
-                group_list += [django_group]
-    user.groups = group_list
-    user.save()
+        dn = group_map.ldap_group.lower()
+        if dn in ldap_user.group_dns:
+            user.groups.add(*group_map.django_group.filter(
+                ldapgroupmap__ldap_group__iexact = dn))
+            user.save()
