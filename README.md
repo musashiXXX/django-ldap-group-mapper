@@ -14,9 +14,6 @@ you can add users to the LDAP group and they will gain access to the application
 according to their Django group counterpart.
 
 
-Disclaimer: This isn't as polished (yet) as it needs to be for use in production. YMMV
-
-
 Prerequisites
 =============
 
