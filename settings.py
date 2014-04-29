@@ -1,11 +1,10 @@
-import os, sys, ldap
-from django_auth_ldap.config import LDAPSearch, ActiveDirectoryGroupType
+import sys
 
 DEBUG = True
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'ldap_groups_test_db'
+        'NAME': './ldap_groups_test_db'
     }
 }
 

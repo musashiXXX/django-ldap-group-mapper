@@ -4,7 +4,6 @@ from ldap_groups.models import LDAPGroupMap, set_group_perms
 from django_auth_ldap.backend import LDAPBackend, populate_user
 from django.contrib.auth.models import User, Group
 
-
 class LDAPGroupMapTestCase(TestCase):
     fixtures = ['users',
                 'groups',
@@ -53,7 +52,7 @@ class LDAPGroupMapTestCase(TestCase):
             user__username = 'admin').count(), 1)
 
         
-    def test_nonadmin_user_group_mapping(self): 
+    def test_nonadmin_user_group_mapping(self):
         # Test the mapping for the non-admin user, 'user'.
         ldap_user = User()
         ldap_user.group_dns = self.non_admin_user_group_dns
