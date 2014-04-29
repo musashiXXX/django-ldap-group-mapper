@@ -1,0 +1,38 @@
+[
+{
+    "pk": 1, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "admin", 
+        "first_name": "Admin", 
+        "last_name": "Admininoff", 
+        "is_active": true, 
+        "is_superuser": true, 
+        "is_staff": true, 
+        "last_login": "2014-04-28T13:38:23.584", 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "pbkdf2_sha256$12000$HufUaQFa2vwp$p8lBbppdlnMtEK3DpIUZLw14uB/uDUaRpMGog0jgShE=", 
+        "email": "admin@domain.tld", 
+        "date_joined": "2014-04-28T13:38:23.584"
+    }
+},
+{
+    "pk": 2, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "user", 
+        "first_name": "User", 
+        "last_name": "Nonadminson",
+        "is_active": true, 
+        "is_superuser": false, 
+        "is_staff": true, 
+        "last_login": "2014-04-28T15:54:43.965", 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "pbkdf2_sha256$12000$HufUaQFa2vwp$p8lBbppdlnMtEK3DpIUZLw14uB/uDUaRpMGog0jgShE=", 
+        "email": "user@domain.tld", 
+        "date_joined": "2014-04-28T14:05:12.582"
+    }
+}
+]

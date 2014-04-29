@@ -11,7 +11,8 @@ setup(name = 'django-ldap-groups',
       long_description = open('README.md').read(),
       zip_safe = False,
       install_requires = [
-        'django-auth-ldap >= 1.1.7',
-        'Django >= 1.0',
-        'python-ldap >= 2.0'
+        'django-auth-ldap >= 1.2.0',
+        'python-ldap >= 2.0',
+        'mockldap >= 0.2.0',
+        'Django >= 1.3'
       ])

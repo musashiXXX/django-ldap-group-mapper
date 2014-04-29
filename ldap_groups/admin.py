@@ -6,6 +6,4 @@ class LDAPGroupMapAdmin(admin.ModelAdmin):
     search_fields = ['ldap_group',
                     'django_group__name']
 
-
-
 admin.site.register(LDAPGroupMap, LDAPGroupMapAdmin)
