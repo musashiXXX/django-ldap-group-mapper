@@ -4,14 +4,15 @@ DEBUG = True
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': './ldap_groups_test_db'
+        'NAME': 'ldap_groups_test_db'
     }
 }
 
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'ldap_groups')
+    'ldap_groups',
+    'tests')
 
 SECRET_KEY = 'XXXxxxXXXxxxXXXxxxXXXxxxXXXxxx'
 

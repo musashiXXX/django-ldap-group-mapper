@@ -1,3 +1,4 @@
 include README.md LICENSE.txt *.py *.sh
-recursive-include ldap_groups *.py *.json
+recursive-include ldap_groups *.py
+recursive-include tests *.py *.json
 prune .git

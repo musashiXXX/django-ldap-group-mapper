@@ -1,6 +1,6 @@
 from django.db.models import Q
 from django.test import TestCase
-from ldap_groups.models import LDAPGroupMap, set_group_perms
+#from ldap_groups.models import LDAPGroupMap
 from django_auth_ldap.backend import LDAPBackend, populate_user
 from django.contrib.auth.models import User, Group
 

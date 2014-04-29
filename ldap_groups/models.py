@@ -4,8 +4,7 @@ from django.db import models
 from django.conf import settings
 from django.dispatch import receiver
 from django.contrib.auth.models import Group
-from django_auth_ldap.backend import LDAPBackend
-from django_auth_ldap.backend import populate_user
+from django_auth_ldap.backend import LDAPBackend, populate_user
 logger = logging.getLogger(__name__)
 
 # Note: These config options are required, at a minimum
