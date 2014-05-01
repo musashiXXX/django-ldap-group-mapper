@@ -9,6 +9,7 @@ setup(
     '*.tests', '*.tests.*','tests.*','tests']),
   url = 'https://github.com/musashiXXX/django-ldap-groups',
   download_url = 'https://github.com/musashiXXX/django-ldap-groups/tarball/0.1.0',
+  keywords = ['django-auth-ldap', 'django', 'ldap'],
   license = 'LICENSE.txt',
   description = 'Django LDAP Group Mapper',
   long_description = open('README.md').read(),
