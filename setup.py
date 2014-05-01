@@ -1,7 +1,7 @@
 from setuptools import find_packages, setup
 
 long_description = 'A simple LDAP group -> Django group mapper, for use with' \
-                   + 'django-auth-ldap.'
+                   + ' django-auth-ldap.'
 
 setup(
   name = 'django-ldap-groups',
