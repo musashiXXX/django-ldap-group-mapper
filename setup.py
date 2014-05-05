@@ -5,7 +5,7 @@ long_description = 'A simple LDAP group -> Django group mapper, for use with' \
 
 setup(
   name = 'django-ldap-group-mapper',
-  version = '0.1.0',
+  version = '0.1.1',
   author = 'Charles Hamilton',
   author_email = 'musashi@nefaria.com',
   packages = find_packages(exclude = [

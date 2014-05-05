@@ -99,7 +99,7 @@ Or else you run the risk of breaking your application.
 
 Once everything has been configured, you simply need to login to Django's admin
 interface, click on _Ldap group maps_, _Add ldap group map_, and then select
-an LDAP group from the dropbox labeled _LDAP OU_, and select a Django group from
+an LDAP group from the dropbox labeled _LDAP Group_, and select a Django group from
 the multiple select box labeled _Django group_. Save. Now, any LDAP user that you
 add to the LDAP group you selected, will gain access to the Django application
 according to the rights of the Django group that it was mapped to.

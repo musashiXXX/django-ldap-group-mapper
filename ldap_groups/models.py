@@ -29,7 +29,7 @@ def get_ldap_groups():
 class LDAPGroupMap(models.Model):
     ldap_group = models.CharField(
         unique = True,
-        verbose_name = 'LDAP OU',
+        verbose_name = 'LDAP Group',
         choices = get_ldap_groups(),
         max_length = 255)
 
