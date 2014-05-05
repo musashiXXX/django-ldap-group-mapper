@@ -1,7 +1,7 @@
 from setuptools import find_packages, setup
 
-version = '0.1.1'
-
+version = '0.1.2'
+github_url = 'https://github.com/musashiXXX/django-ldap-group-mapper'
 long_description = 'A simple LDAP group -> Django group mapper, for use with' \
                    + ' django-auth-ldap.'
 
@@ -12,8 +12,8 @@ setup(
   author_email = 'musashi@nefaria.com',
   packages = find_packages(exclude = [
     '*.tests', '*.tests.*','tests.*','tests']),
-  url = 'https://github.com/musashiXXX/django-ldap-group-mapper',
-  download_url = 'https://github.com/musashiXXX/django-ldap-group-mapper/tarball/%s' % version,
+  url = githuburl,
+  download_url = '%s/tarball/%s' % (github_url, version),
   keywords = ['django-auth-ldap', 'django', 'ldap'],
   license = 'LICENSE.txt',
   description = 'Django LDAP Group Mapper',
