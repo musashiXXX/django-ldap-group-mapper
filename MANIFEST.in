@@ -1,4 +1,4 @@
 include README.md *.txt *.py *.sh
 recursive-include ldap_groups *.py
 recursive-include tests *.py *.json *.ldif *.md *.sh
-prune .git
+prune .git* ldap_groups_test_db
