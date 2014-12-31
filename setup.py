@@ -11,7 +11,7 @@ setup(
   author = 'Charles Hamilton',
   author_email = 'musashi@nefaria.com',
   packages = find_packages(exclude = [
-    '*.tests', '*.tests.*','tests.*','tests']),
+    '*.tests', '*.tests.*','tests.*','tests', 'ldap_groups_test_db']),
   url = githuburl,
   download_url = '%s/tarball/%s' % (github_url, version),
   keywords = ['django-auth-ldap', 'django', 'ldap'],

@@ -1,0 +1,82 @@
+version: 1
+dn: ou=Groups,dc=example,dc=local
+objectClass: organizationalUnit
+ou: Groups
+
+dn: cn=App Admins,ou=Groups,dc=example,dc=local
+objectClass: groupOfNames
+objectClass: top
+cn: App Admins
+member: uid=appadmin,ou=Users,dc=example,dc=local
+
+dn: cn=App Users,ou=Groups,dc=example,dc=local
+objectClass: groupOfNames
+objectClass: top
+cn: App Users
+member: uid=appuser,ou=Users,dc=example,dc=local
+member: uid=appadmin,ou=Users,dc=example,dc=local
+
+dn: cn=All Users,ou=Groups,dc=example,dc=local
+objectClass: groupOfNames
+objectClass: top
+cn: All Users
+member: uid=appuser,ou=Users,dc=example,dc=local
+member: uid=appadmin,ou=Users,dc=example,dc=local
+
+dn: ou=Users,dc=example,dc=local
+objectClass: organizationalUnit
+ou: Users
+
+dn: uid=lbind,ou=Users,dc=example,dc=local
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: LDAP Bind
+displayName: LDAP Bind Account
+gecos: LDAP Bind
+gidNumber: 5000
+givenName: LDAP
+homeDirectory: /home/lbind
+loginShell: /bin/false
+sn: Bind
+uid: lbind
+uidNumber: 10000
+userPassword:: e1NIQX1XNnBoNU1tNVB6OEdnaVVMYlBnekczN21qOWc9
+
+dn: uid=appuser,ou=Users,dc=example,dc=local
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+objectClass: person
+objectClass: top
+cn: User Nonadminson
+displayName: User Nonadminson
+gidNumber: 5001
+givenName: User
+homeDirectory: /home/appuser
+loginShell: /bin/false
+mail: user@exampledomain.tld
+sn: Nonadminson
+uid: appuser
+uidNumber: 10001
+userPassword:: e1NIQX1XNnBoNU1tNVB6OEdnaVVMYlBnekczN21qOWc9
+
+dn: uid=appadmin,ou=Users,dc=example,dc=local
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+objectClass: person
+objectClass: top
+cn: Admin Admininoff
+gidNumber: 5002
+givenName: Admin
+homeDirectory: /home/appadmin
+loginShell: /bin/false
+mail: admin@exampledomain.tld
+sn: Admininoff
+uid: appadmin
+uidNumber: 10002
+userPassword:: e1NIQX1XNnBoNU1tNVB6OEdnaVVMYlBnekczN21qOWc9
+

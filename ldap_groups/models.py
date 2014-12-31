@@ -7,11 +7,10 @@ from django.contrib.auth.models import Group
 from django_auth_ldap.backend import LDAPBackend, populate_user
 logger = logging.getLogger(__name__)
 
-# Note: These config options are required, at a minimum
 server_uri = settings.AUTH_LDAP_SERVER_URI
 bind_dn = settings.AUTH_LDAP_BIND_DN
 bind_password = settings.AUTH_LDAP_BIND_PASSWORD
-groups_base_dn = settings.LDAP_GROUPS_BASE_DN
+ldap_groups_search = settings.AUTH_LDAP_GROUP_SEARCH
 
 def get_ldap_groups():
     dn_choices = []
@@ -21,9 +20,8 @@ def get_ldap_groups():
     except SERVER_DOWN, e:
         logger.warning('%s: %s' % (e.message.get('desc'), server_uri))
         return dn_choices
-    for dn, entry in l.search_s(
-        groups_base_dn, ldap.SCOPE_SUBTREE, '(objectClass=group)'):
-        dn_choices += [(dn, entry['name'][0])]
+    for dn, entry in ldap_groups_search.execute(l):
+        dn_choices += [(dn, entry['cn'][0])]
     return dn_choices
 
 class LDAPGroupMap(models.Model):
@@ -36,7 +34,8 @@ class LDAPGroupMap(models.Model):
     django_group = models.ManyToManyField(Group)
     
     def __unicode__(self):
-        return self.ldap_group
+        django_groups = ', '.join(i.name for i in self.django_group.all())
+        return '%s -> %s' % (self.ldap_group, django_groups)
     
     class Meta:
         ordering = ('ldap_group',)
@@ -45,7 +44,8 @@ class LDAPGroupMap(models.Model):
 @receiver(populate_user, sender = LDAPBackend)
 def set_group_perms(sender, **kwargs):
     '''
-        Make sure that the user's group membership is always up to date
+    Make sure that the user's group membership is always up to date.
+    Note: Updates only occur when a user authenticates.
     '''
     user = kwargs['user']
     ldap_user = kwargs['ldap_user']

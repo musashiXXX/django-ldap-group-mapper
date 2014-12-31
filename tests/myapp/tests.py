@@ -1,13 +1,12 @@
 from django.db.models import Q
 from django.test import TestCase
-#from ldap_groups.models import LDAPGroupMap
 from django_auth_ldap.backend import LDAPBackend, populate_user
 from django.contrib.auth.models import User, Group
 
 class LDAPGroupMapTestCase(TestCase):
-    fixtures = ['users',
-                'groups',
-                'ldap_groups']
+    fixtures = ['users.json',
+                'groups.json',
+                'ldap_groups.json']
 
     def setUp(self):
         self.admin_user_group_dns = set([
