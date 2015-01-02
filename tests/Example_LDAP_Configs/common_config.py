@@ -7,7 +7,6 @@ AUTH_LDAP_BIND_DN = 'uid=lbind,%s' % users_ou
 AUTH_LDAP_BIND_PASSWORD = 'password'
 AUTH_LDAP_REQUIRE_GROUP = 'cn=All Users,%s' % groups_ou
 AUTH_LDAP_ALWAYS_UPDATE_USER = True
-AUTH_LDAP_MIRROR_GROUPS = False
 AUTH_LDAP_USER_FLAGS_BY_GROUP = {
     'is_staff': 'cn=App Admins,%s' % groups_ou,
     'is_active': 'cn=All Users,%s' % groups_ou,

@@ -12,7 +12,7 @@ setup(
   author_email = 'musashi@nefaria.com',
   packages = find_packages(exclude = [
     '*.tests', '*.tests.*','tests.*','tests', 'ldap_groups_test_db']),
-  url = githuburl,
+  url = github_url,
   download_url = '%s/tarball/%s' % (github_url, version),
   keywords = ['django-auth-ldap', 'django', 'ldap'],
   license = 'LICENSE.txt',
