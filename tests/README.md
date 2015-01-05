@@ -80,7 +80,7 @@ Verify that the demo is working by browsing to the admin url, by default this wi
 be: ``http://localhost:8000/admin``, and logging in with the username: ``appadmin``
 and the password: ``password``. You should be redirected to the admin interface's
 home page. Log out. Then, attempt to login with the username: ``appuser`` and the
-password: ``password``. You should _not_ be able to login. Change the password to
+password: ``password``. You should _not_ be able to login. Change the password for
 the ``appadmin`` user from within your LDAP directory; then try to login to the
 Django admin with the new password. You _should_ be able to login.
 
